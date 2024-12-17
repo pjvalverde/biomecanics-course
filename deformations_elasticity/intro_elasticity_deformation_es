@@ -1,6 +1,7 @@
+
 # **Cuerpos Extensos y Deformaciones Axiales en Biomecánica**
 
----
+
 
 ## **Sección 1: Introducción a las Deformaciones Axiales**
 
@@ -20,42 +21,47 @@ Un **cuerpo extenso** es aquel cuya longitud no puede despreciarse al analizar s
 
 1. **Tensión (\(\sigma\))**  
    La tensión es la fuerza por unidad de área en la sección transversal:  
-   \[
+
+   ```math
    \sigma = \frac{N}{A}
-   \]  
+   ```  
    Donde:  
    - \(N\): Fuerza axial (N).  
    - \(A\): Área de la sección transversal (m²).
 
 2. **Deformación unitaria (\(\varepsilon\))**  
    Es el cambio relativo en la longitud del cuerpo:  
-   \[
+
+   ```math
    \varepsilon = \frac{\Delta L}{L_0}
-   \]  
+   ```  
    Donde:  
    - \(\Delta L\): Cambio de longitud (m).  
    - \(L_0\): Longitud original (m).
 
 3. **Ley de Hooke**  
    En la región elástica, tensión y deformación son proporcionales:  
-   \[
+
+   ```math
    \sigma = E \cdot \varepsilon
-   \]  
+   ```  
    Donde \(E\) es el **módulo de Young** (Pa), que mide la rigidez del material.
 
    La deformación unitaria también puede expresarse como la **derivada del desplazamiento**:  
-   \[
+
+   ```math
    \varepsilon = \frac{du}{dx}
-   \]
+   ```
 
 ---
 
 ## **Sección 3: Ecuación de Equilibrio**
 
 La ecuación de equilibrio para un cuerpo extenso sometido a cargas axiales es:  
-\[
+
+```math
 \frac{d}{dx} \left( EA \frac{du}{dx} \right) + q = 0
-\]  
+```  
 Donde:  
 - \(E\): Módulo de Young (Pa).  
 - \(A\): Área de la sección transversal.  
@@ -76,33 +82,39 @@ La solución de esta ecuación proporciona:
 **Solución**:
 
 1. **Ecuación de equilibrio**:  
-   \[
+
+   ```math
    \frac{d}{dx} \left( EA \frac{du}{dx} \right) = 0
-   \]  
+   ```  
    Integrando una vez:  
-   \[
+
+   ```math
    EA \frac{du}{dx} = C_1
-   \]  
+   ```  
 2. **Integrando nuevamente**:  
-   \[
+
+   ```math
    u(x) = \frac{C_1}{EA}x + C_2
-   \]  
+   ```  
 3. **Aplicando condiciones de frontera**:  
    - \(u(0) = 0 \implies C_2 = 0\).  
    - En \(x = L\), \(EA \frac{du}{dx} = F \implies C_1 = F\).
 
    Solución final:  
-   \[
+
+   ```math
    u(x) = \frac{F}{EA}x
-   \]  
+   ```  
 4. **Deformación**:  
-   \[
+
+   ```math
    \varepsilon = \frac{du}{dx} = \frac{F}{EA}
-   \]  
+   ```  
 5. **Tensión**:  
-   \[
+
+   ```math
    \sigma = E \cdot \varepsilon = \frac{F}{A}
-   \]
+   ```
 
 ---
 
