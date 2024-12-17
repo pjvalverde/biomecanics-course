@@ -1,4 +1,3 @@
-
 # **Cuerpos Extensos y Deformaciones Axiales en Biomecánica**
 
 ---
@@ -19,121 +18,121 @@ Un **cuerpo extenso** es aquel cuya longitud no puede despreciarse al analizar s
 
 ## **Sección 2: Tensión y Deformación**
 
-1. **Tensión ($\sigma$)**  
+1. **Tensión (\(\sigma\))**  
    La tensión es la fuerza por unidad de área en la sección transversal:  
-   $$
+   \[
    \sigma = \frac{N}{A}
-   $$  
+   \]  
    Donde:  
-   - $N$: Fuerza axial (N).  
-   - $A$: Área de la sección transversal (m²).
+   - \(N\): Fuerza axial (N).  
+   - \(A\): Área de la sección transversal (m²).
 
-2. **Deformación unitaria ($\varepsilon$)**  
+2. **Deformación unitaria (\(\varepsilon\))**  
    Es el cambio relativo en la longitud del cuerpo:  
-   $$
+   \[
    \varepsilon = \frac{\Delta L}{L_0}
-   $$  
+   \]  
    Donde:  
-   - $\Delta L$: Cambio de longitud (m).  
-   - $L_0$: Longitud original (m).
+   - \(\Delta L\): Cambio de longitud (m).  
+   - \(L_0\): Longitud original (m).
 
 3. **Ley de Hooke**  
    En la región elástica, tensión y deformación son proporcionales:  
-   $$
+   \[
    \sigma = E \cdot \varepsilon
-   $$  
-   Donde $E$ es el **módulo de Young** (Pa), que mide la rigidez del material.
+   \]  
+   Donde \(E\) es el **módulo de Young** (Pa), que mide la rigidez del material.
 
    La deformación unitaria también puede expresarse como la **derivada del desplazamiento**:  
-   $$
+   \[
    \varepsilon = \frac{du}{dx}
-   $$
+   \]
 
 ---
 
 ## **Sección 3: Ecuación de Equilibrio**
 
 La ecuación de equilibrio para un cuerpo extenso sometido a cargas axiales es:  
-$$
+\[
 \frac{d}{dx} \left( EA \frac{du}{dx} \right) + q = 0
-$$  
+\]  
 Donde:  
-- $E$: Módulo de Young (Pa).  
-- $A$: Área de la sección transversal.  
-- $q$: Fuerza distribuida por unidad de longitud (N/m).
+- \(E\): Módulo de Young (Pa).  
+- \(A\): Área de la sección transversal.  
+- \(q\): Fuerza distribuida por unidad de longitud (N/m).
 
 La solución de esta ecuación proporciona:  
-- El **campo de desplazamiento** $u(x)$.  
-- La **deformación**: $\varepsilon = \frac{du}{dx}$.  
-- La **tensión**: $\sigma = E \cdot \varepsilon$.
+- El **campo de desplazamiento** \(u(x)\).  
+- La **deformación**: \(\varepsilon = \frac{du}{dx}\).  
+- La **tensión**: \(\sigma = E \cdot \varepsilon\).
 
 ---
 
 ## **Sección 4: Ejemplo de Aplicación**
 
 ### **Ejemplo 1: Barra homogénea sin carga distribuida**  
-**Problema**: Una barra de longitud $L$, módulo de Young $E$, y sección constante $A$ está fijada en $x = 0$ y sometida a una fuerza $F$ en $x = L$.  
+**Problema**: Una barra de longitud \(L\), módulo de Young \(E\), y sección constante \(A\) está fijada en \(x = 0\) y sometida a una fuerza \(F\) en \(x = L\).  
 
 **Solución**:
 
 1. **Ecuación de equilibrio**:  
-   $$
+   \[
    \frac{d}{dx} \left( EA \frac{du}{dx} \right) = 0
-   $$  
+   \]  
    Integrando una vez:  
-   $$
+   \[
    EA \frac{du}{dx} = C_1
-   $$  
+   \]  
 2. **Integrando nuevamente**:  
-   $$
+   \[
    u(x) = \frac{C_1}{EA}x + C_2
-   $$  
+   \]  
 3. **Aplicando condiciones de frontera**:  
-   - $u(0) = 0 \implies C_2 = 0$.  
-   - En $x = L$, $EA \frac{du}{dx} = F \implies C_1 = F$.
+   - \(u(0) = 0 \implies C_2 = 0\).  
+   - En \(x = L\), \(EA \frac{du}{dx} = F \implies C_1 = F\).
 
    Solución final:  
-   $$
+   \[
    u(x) = \frac{F}{EA}x
-   $$  
+   \]  
 4. **Deformación**:  
-   $$
+   \[
    \varepsilon = \frac{du}{dx} = \frac{F}{EA}
-   $$  
+   \]  
 5. **Tensión**:  
-   $$
+   \[
    \sigma = E \cdot \varepsilon = \frac{F}{A}
-   $$
+   \]
 
 ---
 
 ## **Sección 5: Ejercicios Propuestos**
 
-1. Una barra con **módulo de Young $E$** y longitud $L$ está sometida a una carga distribuida $q(x) = \alpha e^{\beta x}$. Determina:  
-   - El desplazamiento $u(x)$.  
-   - La tensión $\sigma(x)$.
+1. Una barra con **módulo de Young \(E\)** y longitud \(L\) está sometida a una carga distribuida \(q(x) = \alpha e^{\beta x}\). Determina:  
+   - El desplazamiento \(u(x)\).  
+   - La tensión \(\sigma(x)\).
 
-2. Un tendón con módulo $E$ y sección constante $A$ está fijado en un extremo y sometido a una fuerza $F$. Calcula:  
+2. Un tendón con módulo \(E\) y sección constante \(A\) está fijado en un extremo y sometido a una fuerza \(F\). Calcula:  
    - La deformación.  
    - El desplazamiento en función de su longitud.
 
 3. Modela un **músculo-tendón** como un sistema de dos barras:  
-   - Músculo: longitud $L_1$, módulo $E_1$, sección $A_1$.  
-   - Tendón: longitud $L_2$, módulo $E_2$, sección $A_2$.
+   - Músculo: longitud \(L_1\), módulo \(E_1\), sección \(A_1\).  
+   - Tendón: longitud \(L_2\), módulo \(E_2\), sección \(A_2\).
 
    Determina:  
    - El desplazamiento en el punto de unión.  
    - La tensión en cada barra.
 
-4. Una barra suspendida bajo su propio peso tiene longitud $L$, densidad $\rho$ y sección $A$. Determina:  
+4. Una barra suspendida bajo su propio peso tiene longitud \(L\), densidad \(\rho\) y sección \(A\). Determina:  
    - El alargamiento total debido a la gravedad.
 
 5. Una sección del **fémur** se modela como un tubo hueco con:  
-   - Diámetro externo $D$, diámetro interno $d$, longitud $L$, y carga axial $P$.  
+   - Diámetro externo \(D\), diámetro interno \(d\), longitud \(L\), y carga axial \(P\).  
 
    Determina:  
-   - La tensión $\sigma(x)$.  
-   - El desplazamiento $u(x)$.
+   - La tensión \(\sigma(x)\).  
+   - El desplazamiento \(u(x)\).
 
 ---
 
