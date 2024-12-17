@@ -69,8 +69,8 @@ Donde:
 
 La solución de esta ecuación proporciona:  
 - El **campo de desplazamiento** $u(x)$
-- La **deformación**: \(\varepsilon = \frac{du}{dx}\).  
-- La **tensión**: \(\sigma = E \cdot \varepsilon\).
+- La **deformación**: $\varepsilon = \frac{du}{dx}$. 
+- La **tensión**: $\sigma = E \cdot \varepsilon$.
 
 ---
 
@@ -97,8 +97,8 @@ La solución de esta ecuación proporciona:
    u(x) = \frac{C_1}{EA}x + C_2
    ```  
 3. **Aplicando condiciones de frontera**:  
-   - \(u(0) = 0 \implies C_2 = 0\).  
-   - En \(x = L\), \(EA \frac{du}{dx} = F \implies C_1 = F\).
+   - $u(0) = 0$ $\implies$ $C_2 = 0$.
+   - En $x = L$, $EA \frac{du}{dx} = F \implies C_1 = F$.
 
    Solución final:  
 
