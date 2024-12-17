@@ -68,7 +68,7 @@ Donde:
 - \(q\): Fuerza distribuida por unidad de longitud (N/m).
 
 La solución de esta ecuación proporciona:  
-- El **campo de desplazamiento** \(u(x)\).  
+- El **campo de desplazamiento** $u(x)$
 - La **deformación**: \(\varepsilon = \frac{du}{dx}\).  
 - La **tensión**: \(\sigma = E \cdot \varepsilon\).
 
