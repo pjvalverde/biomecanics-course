@@ -1,155 +1,124 @@
+# Análisis Elástico Unidimensional en Biomecánica
 
-# **Cuerpos Extensos y Deformaciones Axiales en Biomecánica**
+## Conceptos Clave y Ecuaciones
 
+### 1. Esfuerzo y Deformación
 
+En sistemas biomecánicos como tendones, músculos y huesos, el esfuerzo (σ) se define como fuerza por unidad de área:
 
-## **Sección 1: Introducción a las Deformaciones Axiales**
+```
+σ = N/A
+```
 
-Un **cuerpo extenso** es aquel cuya longitud no puede despreciarse al analizar su deformación bajo una carga. Las **cargas axiales** son fuerzas aplicadas a lo largo del eje longitudinal del cuerpo, generando dos tipos de esfuerzos:
+donde:
+- N es la fuerza 
+- A es el área transversal
 
-- **Tracción**: Alargamiento del cuerpo.
-- **Compresión**: Acortamiento del cuerpo.
+La deformación (ε) se define como la derivada del campo de desplazamiento:
 
-**Ejemplos en biomecánica**:
-- **Huesos largos** (fémur, tibia).
-- **Tendones y ligamentos** sometidos a tracción.
-- **Músculos** bajo carga axial.
+```
+ε = du/dx
+```
 
----
+### 2. Relación Elástica Esfuerzo-Deformación
 
-## **Sección 2: Tensión y Deformación**
+Para tejidos biológicos en su rango elástico:
 
-1. **Tensión (\(\sigma\))**  
-   La tensión es la fuerza por unidad de área en la sección transversal:  
+```
+σ = Eε
+```
 
-   ```math
-   \sigma = \frac{N}{A}
-   ```  
-   Donde:  
-   - \(N\): Fuerza axial (N).  
-   - \(A\): Área de la sección transversal (m²).
+donde:
+- E es el módulo de Young
+- Esta relación es válida para pequeñas deformaciones
 
-2. **Deformación unitaria (\(\varepsilon\))**  
-   Es el cambio relativo en la longitud del cuerpo:  
+### 3. Ecuación de Equilibrio
 
-   ```math
-   \varepsilon = \frac{\Delta L}{L_0}
-   ```  
-   Donde:  
-   - \(\Delta L\): Cambio de longitud (m).  
-   - \(L_0\): Longitud original (m).
+Para un medio continuo unidimensional:
 
-3. **Ley de Hooke**  
-   En la región elástica, tensión y deformación son proporcionales:  
+```
+d/dx(EA du/dx) + q = 0
+```
 
-   ```math
-   \sigma = E \cdot \varepsilon
-   ```  
-   Donde \(E\) es el **módulo de Young** (Pa), que mide la rigidez del material.
+donde:
+- q es la carga distribuida
+- EA es la rigidez axial
 
-   La deformación unitaria también puede expresarse como la **derivada del desplazamiento**:  
+## Ejemplos Resueltos
 
-   ```math
-   \varepsilon = \frac{du}{dx}
-   ```
+### Ejemplo 1: Análisis de un Tendón
 
----
+Un tendón con módulo de Young E y longitud ℓ está fijo en x = 0 y cargado con una fuerza F en x = ℓ. La sección transversal varía según:
 
-## **Sección 3: Ecuación de Equilibrio**
+```
+A(x) = A₀e^(-βx)
+```
 
-La ecuación de equilibrio para un cuerpo extenso sometido a cargas axiales es:  
+**Solución:**
 
-```math
-\frac{d}{dx} \left( EA \frac{du}{dx} \right) + q = 0
-```  
-Donde:  
-- \(E\): Módulo de Young (Pa).  
-- \(A\): Área de la sección transversal.  
-- \(q\): Fuerza distribuida por unidad de longitud (N/m).
+1. Campo de esfuerzos:
+   - Por equilibrio: N(x) = F
+   - Por lo tanto: σ(x) = F/A(x) = F/(A₀e^(-βx)) = (F/A₀)e^(βx)
 
-La solución de esta ecuación proporciona:  
-- El **campo de desplazamiento** $u(x)$
-- La **deformación**: $\varepsilon = \frac{du}{dx}$. 
-- La **tensión**: $\sigma = E \cdot \varepsilon$.
+2. Campo de desplazamientos:
+   - De la ley de Hooke: du/dx = σ/E = (F/EA₀)e^(βx)
+   - Integrando y aplicando u(0) = 0:
+   - u(x) = (F/EA₀β)(e^(βx) - 1)
 
----
+### Ejemplo 2: Complejo Músculo-Tendón
 
-## **Sección 4: Ejemplo de Aplicación**
+Análisis de una unidad músculo-tendón con:
+- Músculo: longitud ℓ₁, E₁, A₁
+- Tendón: longitud ℓ₂, E₂, A₂
 
-### **Ejemplo 1: Barra homogénea sin carga distribuida**  
-**Problema**: Una barra de longitud \(L\), módulo de Young \(E\), y sección constante \(A\) está fijada en \(x = 0\) y sometida a una fuerza \(F\) en \(x = L\).  
+**Solución:**
 
-**Solución**:
+1. Fuerzas internas:
+   - Por equilibrio, la fuerza es constante = F
 
-1. **Ecuación de equilibrio**:  
+2. Esfuerzos:
+   - Músculo: σ₁ = F/A₁
+   - Tendón: σ₂ = F/A₂
 
-   ```math
-   \frac{d}{dx} \left( EA \frac{du}{dx} \right) = 0
-   ```  
-   Integrando una vez:  
+3. Desplazamientos:
+   - En el punto B: u(B) = Fℓ₁/(E₁A₁)
+   - En el punto C: u(C) = Fℓ₁/(E₁A₁) + Fℓ₂/(E₂A₂)
 
-   ```math
-   EA \frac{du}{dx} = C_1
-   ```  
-2. **Integrando nuevamente**:  
+## Problemas Propuestos
 
-   ```math
-   u(x) = \frac{C_1}{EA}x + C_2
-   ```  
-3. **Aplicando condiciones de frontera**:  
-   - $u(0) = 0$ $\implies$ $C_2 = 0$.
-   - En $x = L$, $EA \frac{du}{dx} = F \implies C_1 = F$.
+### 1. Análisis del Tendón de Aquiles
 
-   Solución final:  
+Considere el tendón de Aquiles como una barra uniforme con:
+- Longitud L = 12 cm
+- Área transversal A = 60 mm²
+- Módulo de Young E = 1.2 GPa
 
-   ```math
-   u(x) = \frac{F}{EA}x
-   ```  
-4. **Deformación**:  
+Si se aplica una fuerza de 2000 N durante el salto, calcular:
+- a) El esfuerzo en el tendón
+- b) El alargamiento total
+- c) La energía de deformación almacenada
 
-   ```math
-   \varepsilon = \frac{du}{dx} = \frac{F}{EA}
-   ```  
-5. **Tensión**:  
+### 2. Compresión de la Columna Vertebral
 
-   ```math
-   \sigma = E \cdot \varepsilon = \frac{F}{A}
-   ```
+Un modelo simplificado de un cuerpo vertebral puede representarse como un cilindro con:
+- Altura h = 20 mm
+- Diámetro D = 30 mm
+- E = 10 GPa
 
----
+Bajo posición normal de pie, experimenta una fuerza de compresión de 400 N. Calcular:
+- a) El esfuerzo de compresión
+- b) La reducción de altura
+- c) ¿Qué sucede con la deformación si el módulo disminuye en un 20% (como en la osteoporosis)?
 
-## **Sección 5: Ejercicios Propuestos**
+### 3. Extensión de Fibra Muscular
 
-1. Una barra con **módulo de Young \(E\)** y longitud \(L\) está sometida a una carga distribuida \(q(x) = \alpha e^{\beta x}\). Determina:  
-   - El desplazamiento \(u(x)\).  
-   - La tensión \(\sigma(x)\).
+Un haz de fibras musculares de longitud 10 cm tiene una sección transversal variable descrita por:
+```
+A(x) = A₀(1 - 0.2x/L)
+```
+donde A₀ = 2 mm². Si E = 0.5 MPa y se aplica una fuerza de 5 N:
+- a) Encontrar la distribución de esfuerzos a lo largo de la fibra
+- b) Calcular el esfuerzo máximo
+- c) Determinar el alargamiento total
 
-2. Un tendón con módulo \(E\) y sección constante \(A\) está fijado en un extremo y sometido a una fuerza \(F\). Calcula:  
-   - La deformación.  
-   - El desplazamiento en función de su longitud.
-
-3. Modela un **músculo-tendón** como un sistema de dos barras:  
-   - Músculo: longitud \(L_1\), módulo \(E_1\), sección \(A_1\).  
-   - Tendón: longitud \(L_2\), módulo \(E_2\), sección \(A_2\).
-
-   Determina:  
-   - El desplazamiento en el punto de unión.  
-   - La tensión en cada barra.
-
-4. Una barra suspendida bajo su propio peso tiene longitud \(L\), densidad \(\rho\) y sección \(A\). Determina:  
-   - El alargamiento total debido a la gravedad.
-
-5. Una sección del **fémur** se modela como un tubo hueco con:  
-   - Diámetro externo \(D\), diámetro interno \(d\), longitud \(L\), y carga axial \(P\).  
-
-   Determina:  
-   - La tensión \(\sigma(x)\).  
-   - El desplazamiento \(u(x)\).
-
----
-
-## **Conclusión**
-
-El estudio de **cuerpos extensos y deformaciones axiales** es fundamental en biomecánica para entender cómo responden estructuras como huesos, tendones y músculos ante fuerzas aplicadas. Resolver estas ecuaciones permite predecir el comportamiento de los tejidos bajo diversas condiciones de carga.
-
----
+*Nota: Considere las restricciones fisiológicas en sus soluciones y discuta si los valores calculados están dentro de los rangos biológicos normales.*
